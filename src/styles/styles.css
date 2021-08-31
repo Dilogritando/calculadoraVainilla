@@ -53,32 +53,101 @@ table {
 }
 
 /* Proyect-Specific */
-h1 {
+header {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+header h1 {
   color: black;
+  font-size: 2em;
 }
 
-.calculator {
-  width: 300px;
-  height: 500px;
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+main .calculator {
   border: solid black 2px;
   display: flex;
+  flex-direction: column;
+  width: 80%;
 }
-.calculator__results {
-  width: 100%;
-  height: 1fr;
+main .calculator__results {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
   color: white;
   background-color: black;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+main .calculator__results .history {
+  font-size: 1em;
+}
+main .calculator__results .total {
+  font-size: 2.5em;
+}
+main .calculator__pad {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.calculator__pad {
-  width: 100%;
+main .calculator__pad__numbers {
+  width: 80%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(3, 33%);
 }
-.calculator__pad--numbers .numbers {
+main .calculator__pad__numbers .numbers {
   background-color: lightgrey;
   color: darkgrey;
 }
-.calculator__pad--operators .operators {
+main .calculator__pad__numbers .numbers:hover {
+  background-color: #9c9c9c;
+  color: black;
+}
+main .calculator__pad__numbers .three-column {
+  grid-column: span 3;
+}
+main .calculator__pad__operators {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+main .calculator__pad__operators .operators {
   background-color: #ff9300;
+  color: white;
+}
+main .calculator__pad__operators .operators:hover {
+  background-color: #a36104;
+}
+main .calculator button {
+  cursor: pointer;
+  font-size: 2em;
+  border: solid white 1px;
+  outline: none;
+  height: 100%;
+}
+
+footer {
+  width: 100%;
+  height: 10vh;
+  background-color: darkgrey;
+  margin: 10px 0 0 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+footer p {
   color: white;
 }
 

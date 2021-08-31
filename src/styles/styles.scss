@@ -50,48 +50,96 @@ table {
 /* Proyect-Specific */
 header{
 	display: flex;
-	text-align: center;
+	justify-content: center;
+    margin: 20px;
 	h1 {
 		color: black;
+		font-size: 2em;
 	}
 }
 
-.calculator{
-	width: 300px;
-	height: 500px;
-	border: solid black 2px;
+main{
 	display: flex;
-	&__results{
-		width: 100%;
-		height: 1fr;
-		color: white;
-		background-color: black;
+	justify-content: center;
+	width: 100%;
+	.calculator{
+		border: solid black 2px;
 		display: flex;
-	}
-	&__pad{
-		width: 100%;
-		&--numbers{
-			.numbers{
-				background-color: lightgrey;
-				color: darkgrey;
+    	flex-direction: column;
+		width: 80%;
+		&__results{
+			padding: 5px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			justify-content: space-around;
+			color: white;
+			background-color: black;
+			word-wrap: break-word;
+			word-break: break-all;
+			.history{
+				font-size: 1em;
+			}
+			.total{
+				font-size: 2.5em;
 			}
 		}
-		&--operators{
-			.operators{
-				background-color: #ff9300;
-				color: white;
+		&__pad {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			&__numbers{
+				width: 80%;
+				display: grid;
+				justify-content: center;
+				align-content: center;
+				flex-direction: row;
+				flex-wrap: wrap;
+				grid-template-columns: repeat(3, 33%);
+				.numbers{
+					background-color: lightgrey;
+					color: darkgrey;
+					&:hover{
+						background-color: rgb(156, 156, 156);
+						color: black;
+					}
+				}
+				.three-column{
+					grid-column: span 3;
+				}
 			}
+			&__operators{
+				display: flex;
+				flex-direction: column;
+				width: 20%;
+				.operators{
+					background-color: #ff9300;
+					color: white;
+					&:hover{
+						background-color: #a36104;
+					}
+				}
+			}
+		}
+		button {
+			cursor: pointer;
+			font-size: 2em;
+			border: solid white 1px;
+			outline: none;
+			height: 100%;
 		}
 	}
 }
-
 footer{
 	width: 100%;
-	height: 200px;
-	background-color: darkgrey;
-	color: white;
-	display: flex;
-	flex-direction: row;
+    height: 10vh;
+    background-color: darkgrey;
+    margin: 10px 0 0 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 	p {
 		color: white;
 	}
