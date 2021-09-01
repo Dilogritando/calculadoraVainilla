@@ -75,6 +75,7 @@ main .calculator {
   width: 80%;
 }
 main .calculator__results {
+  min-height: 60px;
   padding: 5px;
   display: flex;
   flex-direction: column;

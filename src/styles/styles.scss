@@ -57,7 +57,6 @@ header{
 		font-size: 2em;
 	}
 }
-
 main{
 	display: flex;
 	justify-content: center;
@@ -68,6 +67,7 @@ main{
     	flex-direction: column;
 		width: 80%;
 		&__results{
+			min-height: 60px;
 			padding: 5px;
 			display: flex;
 			flex-direction: column;
