@@ -12,7 +12,9 @@ El objetivo es realizar una calculadora donde se pueda sumar, restar, dividir y 
 El proyecto estará corriendo en el puerto 8080
 
 ## ¿Cómo se optimizaría la implementación y la base de datos para publicar en producción, para asegurar una alta demanda simultánea de requests?
-*
+* Se cambiaría el servidor para el acceso del público.
+* Se podrían incluir optimizaciones en funcionalidades (operaciones múltiples, uso de decimales, guardar cantidades en memoria) accesibilidad (lector de pantallas, revisión de contraste) y manejo de buenas prácticas de SEO en el documento.
+* La lógica podría refactorizarse usando if-else o switch, para permitir el mantenimiento y escalabilidad de dichas funcionalidades.
 
 ## Este proyecto se creó usando:
 * NVM: 0.38.8
