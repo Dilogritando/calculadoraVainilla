@@ -29,6 +29,7 @@ const initValidations =(e)=>{
 const clear = () => {
   history.innerHTML = "";
   total.innerHTML = "";
+  result.innerHTML = "";
 }
 const evalOperator =(e) =>{
   //Es un operador que no es clear ni equals)
@@ -43,35 +44,34 @@ const evalOperator =(e) =>{
 }
 const initMath = () => {
   const a = parseInt(history.innerHTML);
-  const b = parseInt(total.innerHTML);
   const operator = total.innerHTML.charAt(0);
-  let operation;
+  const b = parseInt(total.innerHTML.slice(1));
   const calculations = {
     SUM: function (a, b) {
-      return a+b;
+      return (a+b);
     },
     MIN: function (a, b) {
-      return a-b;
+      return (Number(a) - Number(b));
     },
     MOD: function (a, b) {
-      return a%b;
+      return (Number(a)%Number(b));
     },
     MUL: function (a, b) {
-      return a*b;
+      return (Number(a) * Number(b));
     },
   };
-
-  console.log("el operador era", operator);
-  (operator === "+") ? operation="SUM"
-    : ((operator === "-") ? operation="MIN"
-      : ((operator === "x") ? operation="MUL"
-        : ((operator === "%") ? operation="MOD" : ""
+  let operation ="";
+  (operator === "+") ? operation= calculations.SUM(a,b)
+    : ((operator === "-") ? operation=calculations.MIN(a,b)
+      : ((operator === "x") ? operation=calculations.MUL(a,b)
+        : ((operator === "%") ? operation=calculations.MOD(a,b) : ""
           )
         )
       )
-  const finished = calculations[operation](a, b);
-  result.innerHTML = finished;
-  history.innerHTML = total.innerText;
+  ;
+
+  result.innerHTML = operation;
+  history.innerHTML = history.innerHTML.toString()+total.innerText.toString();
   total.innerText ="";
 }
 

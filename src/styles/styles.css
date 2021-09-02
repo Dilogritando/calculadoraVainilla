@@ -86,10 +86,10 @@ main .calculator__results {
   word-wrap: break-word;
   word-break: break-all;
 }
-main .calculator__results .history {
+main .calculator__results #history, main .calculator__results #total {
   font-size: 1em;
 }
-main .calculator__results .total {
+main .calculator__results #result {
   font-size: 2.5em;
 }
 main .calculator__pad {

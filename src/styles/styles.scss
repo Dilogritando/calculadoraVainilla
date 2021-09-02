@@ -77,10 +77,10 @@ main{
 			background-color: black;
 			word-wrap: break-word;
 			word-break: break-all;
-			.history{
+			#history, #total{
 				font-size: 1em;
 			}
-			.total{
+			#result{
 				font-size: 2.5em;
 			}
 		}
